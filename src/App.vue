@@ -1,8 +1,16 @@
 <script setup>
+  
 import { ref } from 'vue';
 import CHeader from './components/CHeader.vue';
-import CLoginForm from './components/CLoginForm.vue'
+import CLoginForm from './components/CLoginForm.vue';
 
+defineProps({
+  islogout: {
+    type:Boolean,
+    required:false,
+    default: true
+  }
+})
 const isAuthed = ref(false);
 
 // onLogout  => isAuthed.value = false
@@ -23,3 +31,9 @@ const onLogin = (email, password) => {
     <p class="text-center text-3xl text-green-700" v-else>welcome</p>
   </div>
 </template>
+<style>
+  .logout {
+  margin-left: 1000px;
+  margin-top: -2px;
+}
+</style>

@@ -1,5 +1,4 @@
 <script setup>
-
 defineProps({
     isAuthed: {
         type: Boolean,
@@ -9,11 +8,12 @@ defineProps({
 });
 </script>
 <template>
-    <header class="container mx-auto px-5 py-4 flex justify-between">
+    <header class="container mx-auto px-5 py-4 flex justify-between ">
         <a href="">logo</a>
+        <a href="" v-show="isAuthed,islogout" class="logout">Logout</a>
         <nav class="flex gap-5">
             <a href="">home</a>
-            <a href="" v-show="isAuthed">profile</a>
+            <a href="" v-show="isAuthed" >profile</a>
             <!-- logout -->
         </nav>
     </header>
